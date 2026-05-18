@@ -9,8 +9,23 @@
 <body>
 <header class="topbar">
   <h1>TDEE Calculator <span class="subtitle">— สูตร Müller</span></h1>
-  <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+  <div class="topbar-actions">
+    <select id="profileSelect" class="profile-select" aria-label="Profile"></select>
+    <button id="profileMenuBtn" class="icon-btn" aria-label="Profile menu" title="Profile / Data">⚙️</button>
+    <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+  </div>
 </header>
+
+<!-- Profile dropdown menu -->
+<div id="profileMenu" class="dropdown-menu hidden" role="menu">
+  <button data-action="add-profile">➕ เพิ่ม Profile</button>
+  <button data-action="rename-profile">✏️ เปลี่ยนชื่อ Profile</button>
+  <button data-action="delete-profile">🗑️ ลบ Profile นี้</button>
+  <hr>
+  <button data-action="export">⬇️ Export ข้อมูล (JSON)</button>
+  <button data-action="import">⬆️ Import ข้อมูล (JSON)</button>
+  <input type="file" id="importFile" accept=".json,application/json" hidden>
+</div>
 
 <main class="container">
 
@@ -63,6 +78,9 @@
       <div><span>FM (Fat Mass):</span> <b id="fmOut">10.50</b> kg</div>
       <div><span>LBM (Lean Body Mass):</span> <b id="lbmOut">59.50</b> kg</div>
     </div>
+
+    <button id="logToday" class="log-btn">📝 บันทึกการชั่งวันนี้ลงประวัติ</button>
+    <p id="logFeedback" class="log-feedback hidden"></p>
   </section>
 
   <!-- SECTION 2: ระดับกิจกรรม -->
@@ -229,8 +247,41 @@
     </div>
   </section>
 
+  <!-- SECTION 7: ประวัติการชั่ง -->
+  <section class="card">
+    <h2>7. ประวัติการชั่ง <span class="en">History</span></h2>
+    <p class="hint">ติดตามการเปลี่ยนแปลงน้ำหนัก / %ไขมัน เมื่อเวลาผ่านไป</p>
+
+    <div id="chartWrap" class="chart-wrap hidden">
+      <svg id="chart" viewBox="0 0 600 200" preserveAspectRatio="none"></svg>
+      <div class="chart-legend">
+        <span class="legend-item"><span class="dot dot-weight"></span> น้ำหนัก (kg)</span>
+        <span class="legend-item"><span class="dot dot-bf"></span> % ไขมัน</span>
+      </div>
+    </div>
+
+    <div id="historyEmpty" class="history-empty">
+      ยังไม่มีประวัติ — กดปุ่ม "📝 บันทึกการชั่งวันนี้" ใน Section 1 เพื่อบันทึกครั้งแรก
+    </div>
+
+    <table id="historyTable" class="history-table hidden">
+      <thead>
+        <tr>
+          <th>วันที่</th>
+          <th>น้ำหนัก (kg)</th>
+          <th>%ไขมัน</th>
+          <th>FM</th>
+          <th>LBM</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="historyBody"></tbody>
+    </table>
+  </section>
+
   <footer class="footer-note">
-    <small>* ค่าที่ได้เป็นค่าประมาณ ควรปรับให้เข้ากับการตอบสนองของร่างกายจริงตลอดสัปดาห์ที่ติดตาม</small>
+    <small>* ค่าที่ได้เป็นค่าประมาณ ควรปรับให้เข้ากับการตอบสนองของร่างกายจริงตลอดสัปดาห์ที่ติดตาม<br>
+    💾 ข้อมูลของคุณบันทึกใน browser นี้เท่านั้น (localStorage) — Export เพื่อสำรองไว้</small>
   </footer>
 </main>
 
