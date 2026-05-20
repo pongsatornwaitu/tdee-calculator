@@ -40,6 +40,21 @@ html, body {
   color: var(--text);
   line-height: 1.55;
   transition: background .2s, color .2s;
+  /* prevent iOS rubber-band over-scroll */
+  overscroll-behavior-y: contain;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* iOS PWA safe areas (notch / dynamic island / home indicator) */
+.topbar {
+  padding-top: max(18px, env(safe-area-inset-top));
+  padding-left: max(28px, env(safe-area-inset-left));
+  padding-right: max(28px, env(safe-area-inset-right));
+}
+.container {
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+  padding-bottom: max(80px, env(safe-area-inset-bottom));
 }
 
 .topbar {
