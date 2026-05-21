@@ -537,6 +537,24 @@ input[type="range"]::-moz-range-thumb {
 .preset-ratio { color: var(--accent); font-weight: 600; margin-bottom: 6px; font-size: 0.92rem; }
 .preset-desc { font-size: 0.82rem; color: var(--text-soft); line-height: 1.5; }
 
+/* Conditional benefit callout inside preset card */
+.conditional-note {
+  margin: 8px 0;
+  padding: 8px 10px;
+  background: color-mix(in srgb, var(--warning) 12%, transparent);
+  border-left: 3px solid var(--warning);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+.conditional-note u {
+  text-decoration: underline;
+  text-decoration-color: var(--warning);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
 /* Fat quality info card */
 .fat-info {
   margin: 14px 0 18px;
