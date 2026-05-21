@@ -20,7 +20,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
 
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 <header class="topbar">
@@ -211,9 +211,9 @@
           <div class="preset-name">Low-Carb</div>
           <div class="preset-ratio">Carb 25 : Fat 75</div>
           <div class="preset-desc">
-            <b>เหมาะกับ:</b> ลดน้ำหนัก, ไวต่ออินซูลิน, ชอบกินอิ่ม<br>
-            <b>✅ ข้อดี:</b> อิ่มนาน ลดความหิว ดีต่อ insulin sensitivity<br>
-            <b>⚠️ ข้อเสีย:</b> พลังงานสำหรับ HIIT/กีฬาเข้มข้นสูงน้อย
+            <b>เหมาะกับ:</b> ผู้ที่มี insulin resistance, prediabetes, T2DM, metabolic syndrome หรือชอบกินอิ่ม<br>
+            <b>✅ ข้อดี:</b> อิ่มนาน, ลด triglyceride, เพิ่ม HDL, ช่วย insulin sensitivity <i>เฉพาะคนที่มี IR/T2DM อยู่แล้ว</i><br>
+            <b>⚠️ ข้อควรระวัง:</b> LDL อาจสูงขึ้น (โดยเฉพาะถ้าไขมันอิ่มตัวเยอะ), พลังงานสำหรับกีฬาเข้มข้นน้อย — <b>ดูหมายเหตุไขมันดี ⬇️</b>
           </div>
         </div>
       </label>
@@ -244,6 +244,66 @@
         </div>
       </label>
     </div>
+
+    <!-- Fat quality info (especially relevant for high-fat presets) -->
+    <details class="fat-info">
+      <summary>📌 หมายเหตุสำคัญ — คุณภาพของไขมัน &amp; CVD risk</summary>
+      <div class="fat-info-body">
+        <p class="fat-intro">
+          ไม่ว่าจะเลือก preset ไหน <b>คุณภาพของไขมันสำคัญกว่าปริมาณ</b> โดยเฉพาะคนที่เลือก Low-Carb ที่ไขมัน 75% ของพลังงานที่เหลือ
+        </p>
+
+        <div class="fat-grid">
+          <div class="fat-col fat-good">
+            <h4>✅ เน้น — ไขมันไม่อิ่มตัว</h4>
+            <ul>
+              <li>น้ำมันมะกอก extra virgin, อะโวคาโด</li>
+              <li>ถั่วและเมล็ด (อัลมอนด์, วอลนัท, เมล็ดเจีย, ฟักทอง)</li>
+              <li>ปลาไขมันสูง (แซลมอน, แมคเคอเรล, ซาร์ดีน, ทูน่า) — โอเมก้า 3</li>
+              <li>ไข่ทั้งฟอง</li>
+              <li>เนยถั่วธรรมชาติ (ไม่มีน้ำตาล/น้ำมันเติม)</li>
+            </ul>
+          </div>
+
+          <div class="fat-col fat-limit">
+            <h4>⚠️ ลด — ไขมันอิ่มตัว (SFA)</h4>
+            <ul>
+              <li>หมูสามชั้น, ของทอด, ฟาสต์ฟู้ด</li>
+              <li>เนื้อแดงแปรรูป (เบคอน, แฮม, ไส้กรอก, ซาลามี)</li>
+              <li>เนย, ครีม, ชีสไขมันเต็ม ปริมาณมาก</li>
+              <li>น้ำมันมะพร้าว/ปาล์ม ปริมาณมากต่อวัน</li>
+            </ul>
+            <p class="fat-note">AHA แนะนำ &lt; 10% ของพลังงานรวม</p>
+          </div>
+
+          <div class="fat-col fat-avoid">
+            <h4>❌ หลีกเลี่ยง — Trans Fat</h4>
+            <ul>
+              <li>มาการีน, เนยเทียม</li>
+              <li>ขนมอบเชิงพาณิชย์ (โดนัท, คุกกี้สำเร็จรูป)</li>
+              <li>ครีมเทียม non-dairy</li>
+              <li>ของทอดจากน้ำมันใช้ซ้ำหลายครั้ง</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cvd-evidence">
+          <h4>🔬 หลักฐานเรื่อง CVD &amp; Insulin Sensitivity</h4>
+          <ul>
+            <li><b>LDL อาจสูงขึ้นใน 30–40% ของคนที่ทำ low-carb</b> (มากในกลุ่ม "lean mass hyper-responders") — ควรตรวจ <i>lipid profile</i> ก่อนเริ่ม + ที่ 3 และ 6 เดือน</li>
+            <li><b>Triglyceride, HDL, HbA1c</b> ส่วนใหญ่ดีขึ้นบน low-carb โดยเฉพาะในคน metabolic syndrome</li>
+            <li><b>T2DM remission</b>: มีหลักฐานชัด 1–2 ปี (Virta Health, DiRECT trial) — ระยะยาว >5 ปียังจำกัด</li>
+            <li><b>Insulin sensitivity</b>: ดีขึ้น<i>เฉพาะ</i>คนที่มี IR/prediabetes/T2DM อยู่แล้ว — ในคนสุขภาพดีอาจเกิด <i>physiological insulin resistance</i> ชั่วคราว (กลับมาปกติเมื่อกินคาร์บ)</li>
+            <li><b>CVD outcome ระยะยาว</b>: หลักฐานที่แข็งที่สุดคือ <b>Mediterranean diet</b> (PREDIMED trial — MUFA สูง, ปลา, ผัก, ถั่ว) — Low-carb แบบ Med-style ปลอดภัยกว่า keto แบบเน้นเนื้อ/เบคอน</li>
+            <li>การศึกษา observational (Seidelmann 2018, Lancet Public Health): มีรูป <i>U-shape</i> — ทั้ง very-low-carb และ very-high-carb สัมพันธ์กับ mortality สูงขึ้นเมื่อเทียบกับ 50–55% carb</li>
+          </ul>
+        </div>
+
+        <p class="fat-disclaimer">
+          ⚕️ แอปนี้ใช้สำหรับการวางแผนทั่วไป ไม่ใช่คำแนะนำทางการแพทย์ — ผู้มีโรคประจำตัว (เบาหวาน, ไขมันสูง, โรคหัวใจ, โรคไต) ควรปรึกษาแพทย์/นักโภชนาการก่อนเปลี่ยน macro อย่างมีนัยสำคัญ
+        </p>
+      </div>
+    </details>
 
     <!-- Final macro summary -->
     <div class="macro-summary">
