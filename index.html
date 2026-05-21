@@ -20,7 +20,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
 
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 <header class="topbar">
@@ -209,15 +209,18 @@
         <input type="radio" name="preset" value="lowcarb">
         <div class="preset-card">
           <div class="preset-name">Low-Carb</div>
-          <div class="preset-ratio">Carb 25 : Fat 75</div>
+          <div class="preset-ratio">Carb 25 : Fat 75 <small>(ของพลังงานที่เหลือ)</small></div>
           <div class="preset-desc">
-            <b>เหมาะกับ:</b> ผู้ที่มี insulin resistance, prediabetes, T2DM, metabolic syndrome หรือชอบกินอิ่ม<br>
-            <b>✅ ข้อดี (ทั่วไป):</b> อิ่มนาน, ลด triglyceride, เพิ่ม HDL<br>
+            <div class="ratio-clarify">
+              ℹ️ <b>หมายเหตุสัดส่วน:</b> ≈ <b>18% carb / 24% protein / 58% fat</b> ของพลังงานรวม — เป็น <i>moderate low-carb</i> ไม่ใช่ strict keto/VLCKD ที่ &lt; 10% carb (&lt; 50 g/วัน)
+            </div>
+            <b>เหมาะกับ:</b> ผู้ที่มี insulin resistance, prediabetes, T2DM, metabolic syndrome, MASLD หรือชอบกินอิ่ม<br>
+            <b>✅ ข้อดี (ทั่วไป):</b> อิ่มนาน, ลด triglyceride (-17.7 mg/dL จาก meta-analysis 2024), เพิ่ม HDL (+6.2 mg/dL)<br>
             <div class="conditional-note">
               🎯 <b>ประโยชน์เฉพาะกลุ่ม (ไม่ใช่ทุกคน):</b>
               ช่วย <b>insulin sensitivity</b> เฉพาะผู้มี IR / prediabetes / T2DM อยู่แล้ว — <u>คนสุขภาพดีอาจไม่ได้ประโยชน์</u> หรือเกิด physiological insulin resistance ชั่วคราว
             </div>
-            <b>⚠️ ข้อควรระวัง:</b> LDL อาจสูงขึ้น (โดยเฉพาะถ้าไขมันอิ่มตัวเยอะ), พลังงานสำหรับกีฬาเข้มข้นน้อย — <button type="button" class="open-fat-info">ดูหมายเหตุไขมันดี ⬇️</button>
+            <b>⚠️ ข้อควรระวัง:</b> LDL อาจสูงขึ้น (+13.5 mg/dL เฉลี่ย, มากกว่านี้ในกลุ่ม LMHR), MACE risk ↑ 2.18x ในผู้ทำต่อเนื่อง — <button type="button" class="open-fat-info">ดูหมายเหตุไขมันดี &amp; หลักฐาน ⬇️</button>
           </div>
         </div>
       </label>
@@ -292,19 +295,71 @@
         </div>
 
         <div class="cvd-evidence">
-          <h4>🔬 หลักฐานเรื่อง CVD &amp; Insulin Sensitivity</h4>
+          <h4>🔬 หลักฐาน CVD (อัปเดต 2024–2026)</h4>
+
+          <p class="ev-subhead">📊 ผลโดยรวม — Meta-analysis 2024 (Am J Clin Nutr, 27 RCTs, n=1,278)</p>
           <ul>
-            <li><b>LDL อาจสูงขึ้นใน 30–40% ของคนที่ทำ low-carb</b> (มากในกลุ่ม "lean mass hyper-responders") — ควรตรวจ <i>lipid profile</i> ก่อนเริ่ม + ที่ 3 และ 6 เดือน</li>
-            <li><b>Triglyceride, HDL, HbA1c</b> ส่วนใหญ่ดีขึ้นบน low-carb โดยเฉพาะในคน metabolic syndrome</li>
-            <li><b>T2DM remission</b>: มีหลักฐานชัด 1–2 ปี (Virta Health, DiRECT trial) — ระยะยาว >5 ปียังจำกัด</li>
-            <li><b>Insulin sensitivity</b>: ดีขึ้น<i>เฉพาะ</i>คนที่มี IR/prediabetes/T2DM อยู่แล้ว — ในคนสุขภาพดีอาจเกิด <i>physiological insulin resistance</i> ชั่วคราว (กลับมาปกติเมื่อกินคาร์บ)</li>
-            <li><b>CVD outcome ระยะยาว</b>: หลักฐานที่แข็งที่สุดคือ <b>Mediterranean diet</b> (PREDIMED trial — MUFA สูง, ปลา, ผัก, ถั่ว) — Low-carb แบบ Med-style ปลอดภัยกว่า keto แบบเน้นเนื้อ/เบคอน</li>
-            <li>การศึกษา observational (Seidelmann 2018, Lancet Public Health): มีรูป <i>U-shape</i> — ทั้ง very-low-carb และ very-high-carb สัมพันธ์กับ mortality สูงขึ้นเมื่อเทียบกับ 50–55% carb</li>
+            <li>LDL-C ↑ <b>+13.5 mg/dL</b> · Total Cholesterol ↑ +13.9 mg/dL</li>
+            <li>HDL ↑ +6.2 mg/dL · Triglyceride ↓ −17.7 mg/dL</li>
+            <li>น้ำหนัก ↓ 2.6 kg · Fasting glucose ↓ −3.2 mg/dL · Insulin ↓ 8.3 pmol/L · DBP ↓ 1.4 mmHg</li>
+            <li>👉 <b>Metabolic markers ดีขึ้น แต่ LDL/TC สูงขึ้นชัด</b> — ไม่ใช่ทั้งบวกหรือทั้งลบ</li>
+          </ul>
+
+          <p class="ev-subhead">🚨 หลักฐานสำคัญ — UK Biobank cohort (JACC: Advances 2024)</p>
+          <ul>
+            <li>n=305 LCHF (carb &lt;25% energy, fat &gt;45%) vs 1,220 standard diet, จับคู่ 1:4</li>
+            <li>Severe hypercholesterolemia (LDL &gt;193 mg/dL): <b>11.1% vs 6.2%</b></li>
+            <li><b>MACE incidence ที่ 11.8 ปี: 9.8% vs 4.3%</b></li>
+            <li>Adjusted <b>Hazard Ratio = 2.18</b> (95% CI 1.39–3.43, p&lt;0.001) — เสี่ยง CVD เพิ่มขึ้นเท่าตัว</li>
+            <li>⚠️ Limitation: dietary recall ครั้งเดียว — แต่ HR ที่สูงขนาดนี้ยังเป็นสัญญาณเตือนสำคัญ</li>
+          </ul>
+
+          <p class="ev-subhead">🧬 LMHR Phenotype — Lean Mass Hyper-Responder</p>
+          <ul>
+            <li>คนผอม + insulin-sensitive + active บางคน → LDL พุ่งจัด (มักเกิน 200, บางราย &gt;500 mg/dL)</li>
+            <li>Triad: LDL &gt;200, HDL ≥80, TG ≤70 mg/dL — รวม BMI ต่ำ/ปกติ</li>
+            <li>กลไก: <b>Lipid Energy Model</b> — ยิ่งผอม/ใช้พลังงานมาก, LDL ยิ่งพุ่ง (สวนทางสัญชาตญาณ)</li>
+            <li><b>KETO-CTA Trial (JACC: Advances Mar 2025, n=100, 4.7 ปี avg, ติดตาม 1 ปี)</b>: ApoB/LDL <i>ไม่ทำนาย</i> plaque progression ในกลุ่มนี้ — "Plaque begets plaque, ApoB does not"</li>
+            <li>⚠️ <i>แต่</i> KETO-CTA ติดตามแค่ 1 ปี — atherosclerosis ใช้เวลา 3–5+ ปีจึงเห็นโครงสร้างเปลี่ยน → ถือเป็น <b>hypothesis-generating</b> ยังไม่ปลดข้อกังวลทั้งหมด</li>
+          </ul>
+
+          <p class="ev-subhead">💊 Drug Interactions — ต้องระวังถ้าใช้ยาเหล่านี้</p>
+          <ul class="drug-warnings">
+            <li><b>Warfarin</b>: ผักใบเขียวมาก → วิตามินเคสูง → INR แกว่ง → เสี่ยง thrombosis/bleeding</li>
+            <li><b>SGLT-2 inhibitors</b> (Empagliflozin, Dapagliflozin ฯลฯ): + keto = เสี่ยง <i>euglycemic DKA</i> สูงมาก (ภาวะฉุกเฉิน)</li>
+            <li><b>Insulin / Sulfonylureas</b>: เสี่ยง hypoglycemia ต้องปรับยาก่อนเริ่ม low-carb</li>
+            <li><b>ยาความดัน</b>: low-carb มักลด BP — อาจต้องลดยา</li>
+            <li>👉 <b>ปรึกษาแพทย์ก่อนเริ่ม</b>หากใช้ยาเหล่านี้</li>
+          </ul>
+
+          <p class="ev-subhead">✅ เคสที่ low-carb มีหลักฐานชัดเชิงบวก</p>
+          <ul>
+            <li><b>T2DM remission</b> 1–2 ปี — Virta Health, DiRECT trial</li>
+            <li><b>MASLD (ไขมันพอกตับ)</b>: VLEKT (&lt;800 kcal, ~13% carb) ลดไขมันตับ <b>77% ใน 12 สัปดาห์</b> vs Mediterranean 14% (JHEP Rep 2026) — <i>และในกลุ่มนี้ LDL <u>ลดลง</u></i> (สวนทาง LMHR เพราะมีไขมันหน้าท้องเหลือเฟือให้เผา)</li>
+            <li><b>Refractory epilepsy</b>: ใช้ทางการแพทย์มาเกิน 100 ปี</li>
+            <li><b>Bipolar disorder + dyslipidemia</b>: Lp(a) ↓ 21%, hsCRP, TNF-α ↓ (Frontiers Nutr 2025)</li>
+            <li><b>Heart failure (มี MPC deficiency)</b>: ketone เป็น "super-fuel" — สัตว์ทดลองฟื้นการทำงานหัวใจ (Nature Metab 2025)</li>
+          </ul>
+
+          <p class="ev-subhead">🥇 CVD evidence แข็งสุด: Mediterranean Diet</p>
+          <ul>
+            <li><b>PREDIMED trial</b>: MUFA สูง (olive oil), ปลา, ผัก, ถั่ว — ลด CVD events ชัดเจน</li>
+            <li>Seidelmann 2018 (Lancet Public Health): <i>U-shape</i> — ทั้ง very-low (&lt;40%) และ very-high (&gt;70%) carb สัมพันธ์กับ mortality สูง; sweet spot 50–55%</li>
+            <li>AHA 2026 Dietary Guidance: SFA &lt; 10% energy, เน้นผัก/ผลไม้/whole grains/unsaturated fats</li>
+            <li>NLA Statement: low-carb "ไม่เหนือกว่า" รูปแบบอื่นในระยะยาว ส่วน LDL ↑ ที่ตามมาทำให้ไม่สามารถรับรองความปลอดภัยเชิงรุก</li>
+          </ul>
+
+          <p class="ev-subhead">🩺 คำแนะนำเชิงปฏิบัติถ้าจะลอง low-carb</p>
+          <ul>
+            <li>ตรวจ <b>lipid panel + ApoB</b> ก่อนเริ่ม + ที่ 3 และ 6 เดือน (ApoB แม่นกว่า LDL-C ในการบ่งชี้ atherogenic burden)</li>
+            <li>เลือก <b>Mediterranean-style low-carb</b> (olive oil, ปลา, อะโวคาโด, ถั่ว) แทน "เนื้อ + เบคอน + เนย"</li>
+            <li>ตรวจ CAC score ถ้าทำต่อเนื่อง &gt;1 ปี โดยเฉพาะถ้า ApoB สูง</li>
+            <li>ถ้า LDL/ApoB พุ่งจัด → พิจารณาเพิ่มคาร์บกลับ (whole grains, beans) หรือใช้ยาลดไขมัน</li>
           </ul>
         </div>
 
         <p class="fat-disclaimer">
-          ⚕️ แอปนี้ใช้สำหรับการวางแผนทั่วไป ไม่ใช่คำแนะนำทางการแพทย์ — ผู้มีโรคประจำตัว (เบาหวาน, ไขมันสูง, โรคหัวใจ, โรคไต) ควรปรึกษาแพทย์/นักโภชนาการก่อนเปลี่ยน macro อย่างมีนัยสำคัญ
+          ⚕️ แอปนี้ใช้สำหรับการวางแผนทั่วไป <b>ไม่ใช่คำแนะนำทางการแพทย์</b> — ผู้มีโรคประจำตัว (เบาหวาน, ไขมันสูง, โรคหัวใจ, โรคไต, AFib ใช้ warfarin) หรือใช้ยา <b>SGLT-2 inhibitors / insulin / sulfonylureas</b> ควรปรึกษาแพทย์ก่อนเปลี่ยน macro อย่างมีนัยสำคัญ
         </p>
       </div>
     </details>

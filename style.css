@@ -672,13 +672,47 @@ input[type="range"]::-moz-range-thumb {
   font-size: 0.95rem;
   color: var(--accent);
 }
-.cvd-evidence ul {
-  margin: 0;
+.cvd-evidence > ul,
+.cvd-evidence > p + ul {
+  margin: 4px 0 10px;
   padding-left: 18px;
   font-size: 0.86rem;
   line-height: 1.65;
 }
-.cvd-evidence li { margin-bottom: 6px; }
+.cvd-evidence li { margin-bottom: 4px; }
+.ev-subhead {
+  margin: 10px 0 2px;
+  padding: 5px 10px;
+  background: var(--surface-2);
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+.cvd-evidence .drug-warnings li {
+  padding: 3px 0;
+}
+.cvd-evidence .drug-warnings li:not(:last-child) {
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+/* Ratio clarification inside preset card */
+.ratio-clarify {
+  margin: 0 0 8px;
+  padding: 6px 10px;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  color: var(--text);
+  line-height: 1.45;
+}
+.preset-ratio small {
+  font-weight: 400;
+  color: var(--text-soft);
+  font-size: 0.78rem;
+}
 
 .fat-disclaimer {
   margin: 14px 0 0;
