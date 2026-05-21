@@ -561,17 +561,16 @@ input[type="range"]::-moz-range-thumb {
   background: var(--surface-2);
   border-radius: 12px;
   border-left: 4px solid var(--warning);
-  overflow: hidden;
 }
 .fat-info > summary {
   cursor: pointer;
-  padding: 12px 16px;
+  padding: 12px 36px 12px 16px;
   font-weight: 600;
   color: var(--text);
   font-size: 0.95rem;
   list-style: none;
   position: relative;
-  user-select: none;
+  display: block;
 }
 .fat-info > summary::-webkit-details-marker { display: none; }
 .fat-info > summary::after {

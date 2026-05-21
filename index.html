@@ -20,7 +20,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
 
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 <header class="topbar">
@@ -371,14 +371,25 @@
   <button id="lightboxClose" aria-label="Close">✕</button>
 </div>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=4"></script>
 <script>
   // Register service worker for PWA / offline support
   if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("sw.js").catch((err) => {
+    window.addEventListener("load", async () => {
+      try {
+        const reg = await navigator.serviceWorker.register("sw.js", { updateViaCache: "none" });
+        // Check for SW updates on every page load
+        reg.update();
+        // When a new SW takes over, reload once so user sees fresh content
+        let reloaded = false;
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+          if (reloaded) return;
+          reloaded = true;
+          location.reload();
+        });
+      } catch (err) {
         console.warn("SW registration failed:", err);
-      });
+      }
     });
   }
 </script>
