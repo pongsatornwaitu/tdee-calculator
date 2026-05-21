@@ -507,6 +507,23 @@ $("proteinInfoBtn").addEventListener("click", () => {
   $("proteinInfo").classList.toggle("hidden");
 });
 
+// "ดูหมายเหตุไขมันดี" buttons inside preset cards → open fat-info details + scroll
+document.querySelectorAll(".open-fat-info").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();          // don't trigger the wrapping <label class="preset">
+    const det = $("fatInfo");
+    if (det) {
+      det.open = true;
+      // Smooth scroll so user sees the just-opened section
+      det.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Brief highlight pulse to draw attention
+      det.classList.add("flash");
+      setTimeout(() => det.classList.remove("flash"), 1200);
+    }
+  });
+});
+
 // Lightbox
 const lightbox = $("lightbox");
 $("bfImage").addEventListener("click", () => lightbox.classList.remove("hidden"));
