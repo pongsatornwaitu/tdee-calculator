@@ -1,13 +1,13 @@
 // Service Worker — TDEE Calculator PWA
 // Strategy: cache-first for app shell, network-first for navigation
 
-const CACHE_VERSION = "v10";
+const CACHE_VERSION = "v11";
 const CACHE_NAME = `tdee-${CACHE_VERSION}`;
 
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./style.css?v=10",
+  "./style.css?v=11",
   "./script.js?v=5",
   "./manifest.webmanifest",
   "./body-fat-reference.webp",
