@@ -762,6 +762,94 @@ input[type="range"]::-moz-range-thumb {
   padding: 10px 0;
 }
 
+/* HR Max & Zones */
+.hrmax-card {
+  text-align: center;
+  padding: 18px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+.hrmax-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.hrmax-value {
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 4px 0 2px;
+}
+.hrmax-value small {
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+.hrmax-formula {
+  font-size: 0.78rem;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+.hr-zones {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+.hr-zone {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border-left: 5px solid;
+  background: var(--surface-2);
+}
+.hr-zone-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.hr-zone-name {
+  font-weight: 700;
+  font-size: 0.98rem;
+}
+.hr-zone-range {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  font-family: ui-monospace, "SF Mono", Consolas, monospace;
+}
+.hr-zone-range b {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1rem;
+}
+.hr-zone-desc {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text-soft);
+}
+.hr-zone-desc b { color: var(--text); }
+
+/* Zone colors — green → yellow → orange → red gradient by intensity */
+.hr-z1 { border-color: #10b981; }
+.hr-z2 { border-color: #22c55e; }
+.hr-z3 { border-color: #f59e0b; }
+.hr-z4 { border-color: #f97316; }
+.hr-z5 { border-color: #ef4444; }
+
+.hr-z1 .hr-zone-name { color: #10b981; }
+.hr-z2 .hr-zone-name { color: #22c55e; }
+.hr-z3 .hr-zone-name { color: #d97706; }
+.hr-z4 .hr-zone-name { color: #f97316; }
+.hr-z5 .hr-zone-name { color: #ef4444; }
+
+[data-theme="dark"] .hr-z3 .hr-zone-name { color: #fbbf24; }
+
 .hidden { display: none !important; }
 
 /* Lightbox */

@@ -197,6 +197,35 @@ function calcAll() {
   $("finalTotal").textContent = Math.round(totalKcal).toLocaleString();
 
   persistInputs();
+  calcHR();
+}
+
+// ============================================================
+// Heart Rate Max + 5 zones (Tanaka formula)
+// ============================================================
+function calcHR() {
+  const a = parseFloat(age.value);
+  const zoneIds = ["z1", "z2", "z3", "z4", "z5"];
+  if (!(a >= 10 && a <= 100)) {
+    $("hrmaxOut").textContent = "—";
+    zoneIds.forEach(id => $(id + "Range").textContent = "—");
+    return;
+  }
+  const hrmax = 208 - 0.7 * a;
+  $("hrmaxOut").textContent = Math.round(hrmax);
+
+  const bounds = [
+    [0.50, 0.60],
+    [0.60, 0.70],
+    [0.70, 0.80],
+    [0.80, 0.90],
+    [0.90, 1.00],
+  ];
+  bounds.forEach(([lo, hi], i) => {
+    const l = Math.round(hrmax * lo);
+    const h = Math.round(hrmax * hi);
+    $(zoneIds[i] + "Range").textContent = `${l}–${h}`;
+  });
 }
 
 // ============================================================

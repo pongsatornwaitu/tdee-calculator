@@ -20,7 +20,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
 
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 <header class="topbar">
@@ -386,6 +386,78 @@
     </table>
   </section>
 
+  <!-- SECTION 8: Heart Rate Zones -->
+  <section class="card">
+    <h2>8. Heart Rate Zones <span class="en">อัตราการเต้นหัวใจสำหรับออกกำลัง</span></h2>
+
+    <div class="hrmax-card">
+      <div class="hrmax-label">HR<sub>max</sub> โดยประมาณ</div>
+      <div class="hrmax-value"><span id="hrmaxOut">—</span> <small>bpm</small></div>
+      <div class="hrmax-formula">สูตร Tanaka: 208 − (0.7 × อายุ) — แม่นกว่า "220 − อายุ" แบบเดิม</div>
+    </div>
+
+    <p class="hint">
+      💡 เป็นค่าประมาณ — คนแต่ละคน HRmax จริงต่างกัน ±10–12 bpm ค่าที่แม่นที่สุดคือจากการทดสอบ maximal effort จริง หรือดูจากค่าที่นาฬิกาบันทึกไว้เมื่อออกกำลังหนักสุด
+    </p>
+
+    <div class="hr-zones">
+      <div class="hr-zone hr-z1">
+        <div class="hr-zone-head">
+          <div class="hr-zone-name">Zone 1 · Very Light</div>
+          <div class="hr-zone-range">50–60% · <b id="z1Range">—</b> bpm</div>
+        </div>
+        <div class="hr-zone-desc">
+          <b>Recovery / Warm-up</b> — active recovery, วอร์มก่อน/หลังซ้อม<br>
+          <i>ความรู้สึก:</i> พูดคุยได้สบายๆ หายใจปกติ
+        </div>
+      </div>
+
+      <div class="hr-zone hr-z2">
+        <div class="hr-zone-head">
+          <div class="hr-zone-name">Zone 2 · Light (Fat Burn)</div>
+          <div class="hr-zone-range">60–70% · <b id="z2Range">—</b> bpm</div>
+        </div>
+        <div class="hr-zone-desc">
+          <b>Endurance base</b> — เผาผลาญไขมันสูง, สร้างพื้นฐาน cardio, เดินเร็ว/วิ่งเบา (ยาว 45–90 นาที)<br>
+          <i>ความรู้สึก:</i> พูดเป็นประโยคยาวๆ ได้ หายใจแรงขึ้นเล็กน้อย
+        </div>
+      </div>
+
+      <div class="hr-zone hr-z3">
+        <div class="hr-zone-head">
+          <div class="hr-zone-name">Zone 3 · Moderate (Aerobic)</div>
+          <div class="hr-zone-range">70–80% · <b id="z3Range">—</b> bpm</div>
+        </div>
+        <div class="hr-zone-desc">
+          <b>Aerobic capacity</b> — เพิ่มความฟิต, tempo run, ปั่นเข้มข้นปานกลาง<br>
+          <i>ความรู้สึก:</i> พูดเป็นวลี หายใจแรงชัดเจน
+        </div>
+      </div>
+
+      <div class="hr-zone hr-z4">
+        <div class="hr-zone-head">
+          <div class="hr-zone-name">Zone 4 · Hard (Threshold)</div>
+          <div class="hr-zone-range">80–90% · <b id="z4Range">—</b> bpm</div>
+        </div>
+        <div class="hr-zone-desc">
+          <b>Lactate threshold</b> — interval training, ยกระดับ performance<br>
+          <i>ความรู้สึก:</i> พูดยาก หายใจหนัก
+        </div>
+      </div>
+
+      <div class="hr-zone hr-z5">
+        <div class="hr-zone-head">
+          <div class="hr-zone-name">Zone 5 · Maximum (VO₂max)</div>
+          <div class="hr-zone-range">90–100% · <b id="z5Range">—</b> bpm</div>
+        </div>
+        <div class="hr-zone-desc">
+          <b>Max effort</b> — sprint intervals สั้นๆ (30 วิ – 3 นาที), ใช้ในการฝึก VO₂max<br>
+          <i>ความรู้สึก:</i> พูดไม่ได้ สุดตัว
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer-note">
     <small>* ค่าที่ได้เป็นค่าประมาณ ควรปรับให้เข้ากับการตอบสนองของร่างกายจริงตลอดสัปดาห์ที่ติดตาม<br>
     💾 ข้อมูลของคุณบันทึกใน browser นี้เท่านั้น (localStorage) — Export เพื่อสำรองไว้</small>
@@ -398,7 +470,7 @@
   <button id="lightboxClose" aria-label="Close">✕</button>
 </div>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=6"></script>
 <script>
   // Register service worker for PWA / offline support
   if ("serviceWorker" in navigator) {
